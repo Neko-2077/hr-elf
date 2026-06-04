@@ -1,0 +1,92 @@
+{
+  "agents": {
+    "recruitment-expert": {
+      "id": "recruitment-expert",
+      "name": "招聘效能专家",
+      "emoji": "🔍",
+      "role": "招聘分析",
+      "description": "分析招聘漏斗、渠道ROI、关键岗位储备",
+      "workspace": "agents/recruitment-expert",
+      "pipeline": true
+    },
+    "performance-analyst": {
+      "id": "performance-analyst",
+      "name": "绩效分析专家",
+      "emoji": "⚖️",
+      "role": "绩效分析",
+      "description": "绩效分布、公平性、人效分析",
+      "workspace": "agents/performance-analyst",
+      "pipeline": true
+    },
+    "compensation-advisor": {
+      "id": "compensation-advisor",
+      "name": "薪酬福利顾问",
+      "emoji": "💰",
+      "role": "薪酬分析",
+      "description": "薪酬结构、公平性、市场竞争力、成本分析",
+      "workspace": "agents/compensation-advisor",
+      "pipeline": true
+    },
+    "training-planner": {
+      "id": "training-planner",
+      "name": "培训发展规划师",
+      "emoji": "🎓",
+      "role": "培训分析",
+      "description": "培训投入、覆盖率、效果评估、人才梯队",
+      "workspace": "agents/training-planner",
+      "pipeline": true
+    },
+    "culture-diagnostician": {
+      "id": "culture-diagnostician",
+      "name": "组织文化诊断师",
+      "emoji": "🏛️",
+      "role": "文化诊断",
+      "description": "离职率、敬业度、文化健康度、组织预警",
+      "workspace": "agents/culture-diagnostician",
+      "pipeline": true
+    },
+    "risk-auditor": {
+      "id": "risk-auditor",
+      "name": "人力风险审计师",
+      "emoji": "🔴",
+      "role": "风险审计",
+      "description": "合规风险、用工风险、薪酬风险、组织风险全面排查",
+      "workspace": "agents/risk-auditor",
+      "pipeline": true
+    },
+    "report-writer": {
+      "id": "report-writer",
+      "name": "HR报告总监",
+      "emoji": "📋",
+      "role": "终审报告",
+      "description": "整合所有分析，出具完整HR健康度诊断报告",
+      "workspace": "agents/report-writer",
+      "pipeline": true
+    }
+  },
+  "pipelines": {
+    "quick_overview": {
+      "name": "快速概览",
+      "steps": ["recruitment-expert", "risk-auditor"],
+      "approver": "report-writer"
+    },
+    "standard_analysis": {
+      "name": "标准分析",
+      "steps": ["recruitment-expert", "performance-analyst", "compensation-advisor", "report-writer"],
+      "approver": "report-writer"
+    },
+    "deep_diagnosis": {
+      "name": "深度诊断",
+      "steps": [
+        "recruitment-expert",
+        "performance-analyst",
+        "compensation-advisor",
+        "training-planner",
+        "culture-diagnostician",
+        "risk-auditor",
+        "report-writer"
+      ],
+      "approver": "report-writer"
+    }
+  }
+}
