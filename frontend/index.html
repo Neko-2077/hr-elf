@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HR精灵 — AI 人力资源分析诊断助手</title>
+<title>HR绮剧伒 鈥?AI 浜哄姏璧勬簮鍒嗘瀽璇婃柇鍔╂墜</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -185,8 +185,8 @@ body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:
 <body>
 
 <header class="app-header">
-  <div class="brand"><span class="icon">👥</span>HR<span>精灵</span></div>
-  <div class="status"><span class="dot"></span><span id="headerStatus">准备就绪</span></div>
+  <div class="brand"><span class="icon">馃懃</span>HR<span>绮剧伒</span></div>
+  <div class="status"><span class="dot"></span><span id="headerStatus">鍑嗗灏辩华</span></div>
 </header>
 
 <div class="app-body">
@@ -194,74 +194,72 @@ body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:
 <aside class="sidebar">
 
   <div>
-    <div class="sec-label">🔑 API 密钥</div>
+    <div class="sec-label">馃攽 API 瀵嗛挜</div>
     <div class="key-box">
       <div class="krow">
         <span class="kdot no" id="keyDot"></span>
-        <span id="keyLabel">未配置 API Key</span>
+        <span id="keyLabel">鏈厤缃?API Key</span>
       </div>
       <div class="key-input-row">
         <input type="password" id="keyInput" placeholder="sk-xxxxxxxxxxxxxxxx" />
-        <button class="btn-sm" id="btnSaveKey">保存</button>
+        <button class="btn-sm" id="btnSaveKey">淇濆瓨</button>
       </div>
       <div class="key-hint">
-        需 <a href="#" id="linkGetKey">DeepSeek API Key</a> 驱动全部 7 个 AI Agent。<br>
-        在 <b>platform.deepseek.com</b> 注册即可获取。
-      </div>
+        闇€ <a href="#" id="linkGetKey">DeepSeek API Key</a> 椹卞姩鍏ㄩ儴 7 涓?AI Agent銆?br>
+        鍦?<b>platform.deepseek.com</b> 娉ㄥ唽鍗冲彲鑾峰彇銆?      </div>
     </div>
   </div>
 
   <div>
-    <div class="sec-label">📄 上传 HR 数据文件</div>
+    <div class="sec-label">馃搫 涓婁紶 HR 鏁版嵁鏂囦欢</div>
     <div class="upload-zone" id="uploadZone">
-      <div class="up-icon">📤</div>
-      <div class="up-text">点击上传人力资源数据</div>
-      <div class="up-hint">拖拽或点击 · 支持 .txt .md</div>
+      <div class="up-icon">馃摛</div>
+      <div class="up-text">鐐瑰嚮涓婁紶浜哄姏璧勬簮鏁版嵁</div>
+      <div class="up-hint">鎷栨嫿鎴栫偣鍑?路 鏀寔 .txt .md</div>
     </div>
     <input type="file" id="fileInput" accept=".txt,.md" />
   </div>
 
-  <div class="divider"><span>或者</span></div>
+  <div class="divider"><span>鎴栬€?/span></div>
 
   <div>
-    <div class="sec-label">✏️ 直接输入 HR 数据</div>
-    <textarea class="text-input-zone" id="textInput" placeholder="在此粘贴或输入人力资源相关数据...&#10;&#10;例如：员工结构、招聘数据、绩效评估、薪酬体系、&#10;培训计划、组织文化、合规风险等" maxlength="50000"></textarea>
-    <div class="char-count" id="charCount">0 / 50000 字</div>
+    <div class="sec-label">鉁忥笍 鐩存帴杈撳叆 HR 鏁版嵁</div>
+    <textarea class="text-input-zone" id="textInput" placeholder="鍦ㄦ绮樿创鎴栬緭鍏ヤ汉鍔涜祫婧愮浉鍏虫暟鎹?..&#10;&#10;渚嬪锛氬憳宸ョ粨鏋勩€佹嫑鑱樻暟鎹€佺哗鏁堣瘎浼般€佽柂閰綋绯汇€?#10;鍩硅璁″垝銆佺粍缁囨枃鍖栥€佸悎瑙勯闄╃瓑" maxlength="50000"></textarea>
+    <div class="char-count" id="charCount">0 / 50000 瀛?/div>
   </div>
 
   <div>
-    <div class="sec-label">⚙️ 分析模式</div>
+    <div class="sec-label">鈿欙笍 鍒嗘瀽妯″紡</div>
     <div class="pipe-opts" id="pipeOpts"></div>
   </div>
 
-  <button class="btn-go" id="btnGo" disabled>请先上传 HR 数据</button>
+  <button class="btn-go" id="btnGo" disabled>璇峰厛涓婁紶 HR 鏁版嵁</button>
 
   <div class="history-section" id="historySection">
     <div class="history-header" id="historyHeader">
-      <span>📋 历史记录</span>
-      <span class="history-toggle" id="historyToggle">▶</span>
+      <span>馃搵 鍘嗗彶璁板綍</span>
+      <span class="history-toggle" id="historyToggle">鈻?/span>
     </div>
     <div class="history-list" id="historyList"></div>
   </div>
 
   <div class="sidebar-footer">
-    HR精灵 · 7 Agent AI 人力资源分析团队<br>
-    ⚠️ 仅供学习参考，不构成管理建议
-  </div>
+    HR绮剧伒 路 7 Agent AI 浜哄姏璧勬簮鍒嗘瀽鍥㈤槦<br>
+    鈿狅笍 浠呬緵瀛︿範鍙傝€冿紝涓嶆瀯鎴愮鐞嗗缓璁?  </div>
 
 </aside>
 
 <main class="main-content" id="mainContent">
 
   <div class="empty" id="emptyState">
-    <div class="e-icon">👥</div>
-    <h2>上传 HR 数据，开始诊断</h2>
-    <p>支持员工概况、招聘、绩效、薪酬、培训、<br>组织文化、合规等维度数据。<br>7 位 AI Agent 将按专业流程接力分析，<br>最终输出完整人力资源诊断报告。</p>
+    <div class="e-icon">馃懃</div>
+    <h2>涓婁紶 HR 鏁版嵁锛屽紑濮嬭瘖鏂?/h2>
+    <p>鏀寔鍛樺伐姒傚喌銆佹嫑鑱樸€佺哗鏁堛€佽柂閰€佸煿璁€?br>缁勭粐鏂囧寲銆佸悎瑙勭瓑缁村害鏁版嵁銆?br>7 浣?AI Agent 灏嗘寜涓撲笟娴佺▼鎺ュ姏鍒嗘瀽锛?br>鏈€缁堣緭鍑哄畬鏁翠汉鍔涜祫婧愯瘖鏂姤鍛娿€?/p>
   </div>
 
   <div class="progress-panel" id="progressPanel">
     <div class="stages" id="stages"></div>
-    <div class="live-stream" id="liveStream">等待开始...</div>
+    <div class="live-stream" id="liveStream">绛夊緟寮€濮?..</div>
   </div>
 
   <div class="result-panel" id="resultPanel">
@@ -269,393 +267,19 @@ body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:
     <div class="result-tabs" id="resultTabs"></div>
     <div id="resultTabContents"></div>
     <div class="result-actions" id="resultActions">
-      <button class="btn-export" id="btnExportMd">📥 导出 Markdown</button>
-      <button class="btn-export" id="btnExportDocx">📄 导出 Word</button>
-      <button class="btn-export" id="btnExportTxt">📝 导出纯文本</button>
+      <button class="btn-export" id="btnExportMd">馃摜 瀵煎嚭 Markdown</button>
+      <button class="btn-export" id="btnExportDocx">馃搫 瀵煎嚭 Word</button>
+      <button class="btn-export" id="btnExportTxt">馃摑 瀵煎嚭绾枃鏈?/button>
     </div>
     <div class="disclaimer">
-      ⚠️ <strong>AI 辅助分析 · 不构成管理建议</strong><br>
-      以上内容由 AI（DeepSeek）生成，仅供学习参考。人力资源管理决策涉及复杂的人和组织因素，建议结合管理者判断和专业 HR 顾问意见综合决策。
-    </div>
+      鈿狅笍 <strong>AI 杈呭姪鍒嗘瀽 路 涓嶆瀯鎴愮鐞嗗缓璁?/strong><br>
+      浠ヤ笂鍐呭鐢?AI锛圖eepSeek锛夌敓鎴愶紝浠呬緵瀛︿範鍙傝€冦€備汉鍔涜祫婧愮鐞嗗喅绛栨秹鍙婂鏉傜殑浜哄拰缁勭粐鍥犵礌锛屽缓璁粨鍚堢鐞嗚€呭垽鏂拰涓撲笟 HR 椤鹃棶鎰忚缁煎悎鍐崇瓥銆?    </div>
   </div>
 
 </main>
 </div>
 
-<script>
-// ── App 核心逻辑 ──
-const $ = (s) => document.querySelector(s);
-const $$ = (s) => document.querySelectorAll(s);
-
-// ── 状态 ──
-let state = {
-  apiKeyReady: false,
-  file: null,
-  fileContent: '',
-  textContent: null,
-  pipelineType: 'standard_analysis',
-  running: false
-};
-let lastResult=null;
-const pipelines=[
-  {id:'quick_overview',name:'快速概览',icon:'🔍',steps:'招聘 → 风险预警'},
-  {id:'standard_analysis',name:'标准分析',icon:'📊',steps:'招聘 → 绩效 → 薪酬 → 终审报告'},
-  {id:'deep_diagnosis',name:'深度诊断',icon:'🏥',steps:'招聘 → 绩效 → 薪酬 → 培训 → 文化 → 风险 → 终审'}
-];
-
-// ── 初始化 ──
-async function init() {
-  // 检查 Key
-  try {
-    const result = await window.hrelf.checkKey();
-    if (result.hasKey) {
-      state.apiKeyReady = true;
-      updateKeyUI(true, result.masked);
-    }
-  } catch (e) {
-    // 非 Electron 环境（浏览器调试），直接允许运行
-    console.log('非 Electron 环境');
-    state.apiKeyReady = true;
-    updateKeyUI(true, 'sk-***');
-  }
-
-  // 渲染分析模式
-  renderPipelineOpts();
-
-  // 恢复上次分析结果 + 加载历史列表
-  if(window.hrelf&&window.hrelf.loadLatest){
-    try{
-      var prev=await window.hrelf.loadLatest();
-      if(prev&&prev.result){renderResult(prev.result,prev)}
-    }catch(e){console.error('[init] loadLatest err:',e)}
-    refreshHistoryList();
-  }
-
-  // 事件绑定
-  $('#uploadZone').addEventListener('click', () => $('#fileInput').click());
-  $('#uploadZone').addEventListener('dragover', (e) => { e.preventDefault(); e.stopPropagation(); });
-  $('#uploadZone').addEventListener('drop', handleDrop);
-  $('#fileInput').addEventListener('change', handleFileSelect);
-  $('#btnSaveKey').addEventListener('click', saveKey);
-  $('#btnGo').addEventListener('click', startAnalysis);
-  $('#linkGetKey').addEventListener('click', (e) => {
-    e.preventDefault();
-    require('electron').shell.openExternal('https://platform.deepseek.com/api_keys');
-  });
-  // 文字输入实时监听
-  $('#textInput').addEventListener('input', function() {
-    var len = $('#textInput').value.length;
-    $('#charCount').textContent = len + ' / 50000 字';
-    state.textContent = $('#textInput').value.trim() || null;
-    state.file = null; state.fileContent = '';
-    $('#uploadZone').classList.remove('has-file');
-    var fn = $('#uploadZone').querySelector('.file-name'); if (fn) fn.remove();
-    $('#uploadZone').querySelector('.up-text').textContent = '点击上传人力资源数据';
-    updateGoButton();
-  });
-
-  // 历史面板
-  $('#historyHeader').addEventListener('click',function(){
-    var list=$('#historyList');
-    var toggle=$('#historyToggle');
-    var open=list.classList.contains('open');
-    if(open){list.classList.remove('open');toggle.classList.remove('open')}
-    else{list.classList.add('open');toggle.classList.add('open');refreshHistoryList()}
-  });
-
-  // 导出按钮
-  $('#btnExportMd').addEventListener('click',function(){doExport('md')});
-  $('#btnExportDocx').addEventListener('click',function(){doExport('docx')});
-  $('#btnExportTxt').addEventListener('click',function(){doExport('txt')});
-}
-
-function updateKeyUI(ready, masked) {
-  const dot = $('#keyDot');
-  const label = $('#keyLabel');
-  dot.className = 'kdot ' + (ready ? 'ok' : 'no');
-  label.textContent = ready ? `已配置 (${masked})` : '未配置 API Key';
-  updateGoButton();
-}
-
-function updateGoButton() {
-  const btn = $('#btnGo');
-  if (!state.file && !state.textContent) {
-    btn.disabled = true;
-    btn.textContent = '请上传 HR 数据或输入文字';
-  } else if (!state.apiKeyReady) {
-    btn.disabled = true;
-    btn.textContent = '请先配置 API Key';
-  } else if (state.running) {
-    btn.disabled = true;
-    btn.textContent = '分析中...';
-  } else {
-    btn.disabled = false;
-    btn.textContent = `开始${getPipelineName(state.pipelineType)}`;
-  }
-}
-
-// ── 文件处理 ──
-function handleFileSelect(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  state.file = file;
-  readFile(file);
-}
-
-function handleDrop(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  const file = e.dataTransfer.files[0];
-  if (!file) return;
-  state.file = file;
-  readFile(file);
-}
-
-function readFile(file) {
-  state.file = file; state.textContent = null;
-  $('#textInput').value = ''; $('#charCount').textContent = '0 / 50000 字';
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    state.fileContent = e.target.result;
-    $('#uploadZone').classList.add('has-file');
-    $('#uploadZone').querySelector('.up-text').textContent = '已选择文件';
-    $('#uploadZone').querySelector('.file-name')?.remove();
-    const el = document.createElement('div');
-    el.className = 'file-name';
-    el.textContent = file.name;
-    $('#uploadZone').appendChild(el);
-    updateGoButton();
-  };
-  reader.readAsText(file);
-}
-
-// ── Key 管理 ──
-async function saveKey() {
-  const key = $('#keyInput').value.trim();
-  if (!key) return;
-  try {
-    await window.hrelf.saveKey(key);
-    state.apiKeyReady = true;
-    updateKeyUI(true, key.slice(0, 4) + '****' + key.slice(-4));
-    $('#keyInput').value = '';
-  } catch (e) {
-    alert('保存失败: ' + e.message);
-  }
-}
-
-// ── Pipeline 选择 ──
-function renderPipelineOpts() {
-  const container = $('#pipeOpts');
-  container.innerHTML = pipelines.map((p, i) => {
-    const active = (i === 1) ? ' active' : '';
-    return `<div class="pipe-opt${active}" data-pipe="${p.id}">
-      <div class="p-top"><span class="p-icon">${p.icon}</span><span class="p-name">${p.name}</span></div>
-      <div class="p-steps">${p.steps}</div>
-    </div>`;
-  }).join('');
-
-  container.querySelectorAll('.pipe-opt').forEach(el => {
-    el.addEventListener('click', () => {
-      container.querySelectorAll('.pipe-opt').forEach(e => e.classList.remove('active'));
-      el.classList.add('active');
-      state.pipelineType = el.dataset.pipe;
-      updateGoButton();
-    });
-  });
-}
-
-function getPipelineName(id) {
-  const map = { quick_overview: '快速概览', standard_analysis: '标准分析', deep_diagnosis: '深度诊断' };
-  return map[id] || '分析';
-}
-
-// ── 分析流程 ──
-async function startAnalysis() {
-  if (state.running || (!state.file && !state.textContent) || !state.apiKeyReady) return;
-  state.running = true;
-  $('#btnGo').classList.add('running');
-  $('#btnGo').textContent = '分析中...';
-  $('#btnGo').disabled = true;
-
-  // 切换视图
-  $('#emptyState').style.display = 'none';
-  $('#resultPanel').classList.remove('visible');
-  $('#progressPanel').classList.add('visible');
-
-  var content = state.fileContent || state.textContent;
-  var fileName = state.file ? state.file.name : ('手动输入（' + content.length + '字）');
-
-  try {
-    const result = await window.hrelf.runReview({
-      content: content,
-      fileName: fileName,
-      pipelineType: state.pipelineType
-    });
-
-    // 渲染结果
-    renderResult(result);
-  } catch (err) {
-    alert('分析失败: ' + err.message);
-  } finally {
-    state.running = false;
-    $('#btnGo').classList.remove('running');
-    updateGoButton();
-  }
-}
-
-// ── 结果渲染 ──
-function renderResult(result,historyItem){
-  // 补全 meta
-  lastResult=result;
-  lastResult.fileName=lastResult.fileName||(historyItem?historyItem.fileName:null)||(state.file?state.file.name:null)||('手动输入');
-  lastResult.pipelineName=lastResult.pipelineName||(pipelines.find(function(p){return p.id===state.pipelineType})||pipelines[1]).name;
-  $('#progressPanel').classList.remove('visible');
-  $('#resultPanel').classList.add('visible');
-
-  // Meta
-  var pipe=pipelines.find(function(p){return p.name===lastResult.pipelineName})||pipelines[1];
-  $('#resultMeta').innerHTML = `
-    <span class="meta-item">${pipe.icon} <strong>${lastResult.pipelineName}</strong></span>
-    <span class="meta-item">⏱ 耗时 ${result.elapsedSeconds}s</span>
-    <span class="meta-item">🤖 ${result.stages.length} 位 Agent</span>
-    <span class="meta-item">📄 ${lastResult.fileName}</span>
-  `;
-
-  // Tabs
-  let tabsHtml = '';
-  let contentsHtml = '';
-  result.stages.forEach((stage, i) => {
-    const active = i === result.stages.length - 1 ? ' active' : '';
-    tabsHtml += `<button class="result-tab${active}" data-tab="${i}">${stage.emoji} ${stage.name}</button>`;
-    contentsHtml += `<div class="result-tab-content${active}" data-content="${i}">
-      <div class="result-body">${markdownToHtml(stage.output)}</div>
-    </div>`;
-  });
-
-  $('#resultTabs').innerHTML = tabsHtml;
-  $('#resultTabContents').innerHTML = contentsHtml;
-
-  // Tab 切换
-  $('#resultTabs').querySelectorAll('.result-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const idx = tab.dataset.tab;
-      $$('.result-tab').forEach(t => t.classList.remove('active'));
-      $$('.result-tab-content').forEach(c => c.classList.remove('active'));
-      tab.classList.add('active');
-      $(`.result-tab-content[data-content="${idx}"]`).classList.add('active');
-    });
-  });
-
-  $('#mainContent').scrollTop = 0;
-  refreshHistoryList();
-}
-
-// ── 简单的 Markdown → HTML ──
-function markdownToHtml(md) {
-  return md
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace(/^# (.*$)/gm, '<h1>$1</h1>')
-    .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-    .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-    .replace(/^#### (.*$)/gm, '<h4>$1</h4>')
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/^\- (.*$)/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
-    .replace(/^> (.*$)/gm, '<blockquote>$1</blockquote>')
-    .replace(/^---$/gm, '<hr>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/\n/g, '<br>')
-    .replace(/<p><\/p>/g, '')
-    .replace(/^(?!<)/gm, (line) => line ? `<p>${line}</p>` : '');
-}
-
-// ── 历史列表 ──
-async function refreshHistoryList(){
-  if(!window.hrelf||!window.hrelf.loadHistory)return;
-  try{
-    var history=await window.hrelf.loadHistory();
-    var list=$('#historyList');
-    if(!history.length){list.innerHTML='<div class="history-item" style="color:var(--text3)">暂无历史记录</div>';return}
-    list.innerHTML=history.map(function(h,i){
-      var pipeName=pipelines.find(function(p){return p.id===h.pipelineType});
-      pipeName=pipeName?pipeName.name:'分析';
-      var time=new Date(h.time).toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
-      var fn=(h.fileName||'').replace(/\.(txt|md)$/i,'');
-      return '<div class="history-item" onclick="loadHistoryItem('+i+')"><span class="hi-name">'+pipeName+' · '+fn+'</span><span class="hi-time">'+time+'</span></div>';
-    }).join('');
-  }catch(e){console.error('[refreshHistoryList]',e)}
-}
-
-window.loadHistoryItem=async function(idx){
-  try{
-    var history=await window.hrelf.loadHistory();
-    var item=history[idx];
-    if(item&&item.result){
-      item.result.fileName=item.fileName;
-      item.result.pipelineName=pipelines.find(function(p){return p.id===item.pipelineType}).name;
-      renderResult(item.result,item);
-      $('#historyList').classList.remove('open');
-      $('#historyToggle').classList.remove('open');
-    }
-  }catch(e){console.error('[loadHistoryItem]',e)}
-};
-
-// ── 导出功能 ──
-function buildReportMarkdown(r){
-  var lines=[];
-  var pipeName=r.pipelineName||'标准分析';
-  lines.push('# '+pipeName+' 报告');
-  lines.push('');
-  lines.push('> 生成时间：'+new Date().toLocaleString());
-  lines.push('> 耗时：'+(r.elapsedSeconds||'?')+' 秒');
-  lines.push('');
-  var ss=r.stages||[];
-  for(var i=0;i<ss.length;i++){
-    var s=ss[i];
-    lines.push('## '+s.emoji+' '+s.name);
-    lines.push('');
-    lines.push(s.output||'(无输出)');
-    lines.push('');
-  }
-  return lines.join('\n');
-}
-
-async function doExport(format){
-  if(!lastResult){alert('没有可导出的报告');return}
-  var pipeName=lastResult.pipelineName||'分析';
-  var fn=lastResult.fileName||('手动输入');
-  var content,defaultName,filters;
-  if(format==='docx'){
-    var h='<html><head><meta charset="UTF-8"><title>'+pipeName+'报告</title>';
-    h+='<style>body{font-family:"Noto Sans SC",sans-serif;line-height:1.8;max-width:780px;margin:40px auto;color:#0f172a}h1{border-bottom:2px solid #7c3aed;padding-bottom:8px}h2{border-bottom:1px solid #cbd5e1;padding-bottom:6px;margin-top:1.4em}table{width:100%;border-collapse:collapse;margin:16px 0}th,td{border:1px solid #cbd5e1;padding:8px 12px}th{background:#f1f5f9}</style></head><body>';
-    h+='<h1>'+pipeName+' 报告</h1>';
-    h+='<p>生成时间：'+new Date().toLocaleString()+' | 耗时：'+(lastResult.elapsedSeconds||'?')+' 秒</p>';
-    var ss=lastResult.stages||[];
-    for(var i=0;i<ss.length;i++){h+='<h2>'+ss[i].emoji+' '+ss[i].name+'</h2>';h+=markdownToHtml(ss[i].output||'(无输出)')}
-    h+='</body></html>';
-    content=h;
-    defaultName=pipeName+'报告_'+fn.replace(/\.[^.]+$/,'')+'.doc';
-    filters=[{name:'Word 文档',extensions:['doc','docx']}];
-  }else if(format==='md'){
-    content=buildReportMarkdown(lastResult);
-    defaultName=pipeName+'报告_'+fn.replace(/\.[^.]+$/,'')+'.md';
-    filters=[{name:'Markdown',extensions:['md']}];
-  }else{
-    content=buildReportMarkdown(lastResult).replace(/^#+ /gm,'').replace(/\*\*/g,'').replace(/\*/g,'').replace(/`/g,'').replace(/^> /gm,'');
-    defaultName=pipeName+'报告_'+fn.replace(/\.[^.]+$/,'')+'.txt';
-    filters=[{name:'纯文本',extensions:['txt']}];
-  }
-  if(window.hrelf&&window.hrelf.exportFile){
-    var res=await window.hrelf.exportFile({content:content,defaultName:defaultName,filters:filters});
-    if(!res.success){if(res.error)alert('导出失败: '+res.error)}
-  }else{
-    var blob=new Blob([content],{type:format==='docx'?'text/html':'text/plain;charset=utf-8'});
-    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=defaultName;a.click();
-  }
-}
-
-init();
-</script>
+<script src="app.js"></script>
 </body>
 </html>
+
